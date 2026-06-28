@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero.svg" alt="Blindspot: read-only reverse engineering of a manually-mapped cheat DLL that evades pe-sieve. Anti-cheat safe." width="100%"/>
+  <img src="assets/hero.svg?v=2" alt="Blindspot: read-only reverse engineering of a manually-mapped cheat DLL that evades pe-sieve. Anti-cheat safe." width="100%"/>
 </p>
 
 # Blindspot
