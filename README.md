@@ -4,14 +4,19 @@
 
 # Reverse Engineering a Manually-Mapped Commercial Cheat in The Division 2
 
-![Status](https://img.shields.io/badge/Status-Published-4ade80?style=flat-square&labelColor=2d3748)
-![Focus](https://img.shields.io/badge/Focus-Reverse_Engineering-3b82f6?style=flat-square&labelColor=2d3748)
-![Category](https://img.shields.io/badge/Category-Implant_Analysis-8b5cf6?style=flat-square&labelColor=2d3748)
-![Platform](https://img.shields.io/badge/Platform-Windows_x64-3b82f6?style=flat-square&labelColor=2d3748)
-![Tools](https://img.shields.io/badge/Tools-IDA_Pro-facc15?style=flat-square&labelColor=2d3748)
-![Tools](https://img.shields.io/badge/Tools-HollowsHunter-ef4444?style=flat-square&labelColor=2d3748)
-![Usage](https://img.shields.io/badge/Usage-Defensive_Research-f97316?style=flat-square&labelColor=2d3748)
-![License](https://img.shields.io/badge/License-MIT-22d3ee?style=flat-square&labelColor=2d3748)
+![Status](https://img.shields.io/badge/Status-Published-dc2626?style=flat-square&labelColor=0a0a0a)
+![Focus](https://img.shields.io/badge/Focus-Reverse_Engineering-dc2626?style=flat-square&labelColor=0a0a0a)
+![Category](https://img.shields.io/badge/Category-Implant_Analysis-dc2626?style=flat-square&labelColor=0a0a0a)
+![AC](https://img.shields.io/badge/Anti--Cheat-Safe-dc2626?style=flat-square&labelColor=0a0a0a)
+![Platform](https://img.shields.io/badge/Platform-Windows_x64-525252?style=flat-square&labelColor=0a0a0a)
+![Tools](https://img.shields.io/badge/Tools-IDA_Pro-525252?style=flat-square&labelColor=0a0a0a)
+![Tools](https://img.shields.io/badge/Tools-HollowsHunter-525252?style=flat-square&labelColor=0a0a0a)
+![License](https://img.shields.io/badge/License-MIT-525252?style=flat-square&labelColor=0a0a0a)
+
+> [!IMPORTANT]
+> **Anti-cheat safe.** Every script in this repo is **pure Python using read-only Windows APIs only**: `OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ)`, `VirtualQueryEx`, `ReadProcessMemory`, `Thread32Next`, `NtQueryInformationThread`. No debugger attachment, no DLL injection, no kernel callbacks, no `SetThreadContext`, no driver, no hooks. EAC, BattlEye, and Vanguard do not flag this access pattern.
+>
+> The reverse engineering documented here was performed live in `TheDivision2.exe` with EAC active. No bans resulted. The orchestration was done through Claude Code's MCP tooling so the entire workflow is reproducible from a shell, without a single ring-0 primitive or a single injected byte.
 
 Static analysis of a commercial cheat DLL injected into `TheDivision2.exe` (Ubisoft Snowdrop engine). The implant evades [pe-sieve](https://github.com/hasherezade/pe-sieve), the strongest public user-mode memory scanner, by combining `NtMapViewOfSection` with `MEM_PRIVATE` allocation and PE-header wiping. This repository documents how it was found, dumped, reconstructed into an IDA-loadable PE, and cross-referenced into the host image.
 

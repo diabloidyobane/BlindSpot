@@ -1,31 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Manual-Map Analysis - Find what pe-sieve misses. Reverse engineering a manually-mapped cheat DLL that hides from the strongest public memory scanner.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="Manual-Map Analysis: anti-cheat-safe static reverse engineering of a manually-mapped cheat DLL.">
   <defs>
-    <style>
-      .label   { font: 600 16px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0ea5e9; letter-spacing: 3px; }
-      .head    { font: 700 64px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0f172a; }
-      .head-em { font: italic 700 64px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #0ea5e9; }
-      .sub     { font: 400 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #475569; }
-      .meta    { font: 500 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; fill: #64748b; letter-spacing: 2px; }
-      @media (prefers-color-scheme: dark) {
-        .head { fill: #f1f5f9; }
-        .sub { fill: #94a3b8; }
-        .meta { fill: #64748b; }
-      }
-    </style>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="1.1" fill="#262626"/>
+    </pattern>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0a0a" stop-opacity="0.6"/>
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="400" fill="transparent"/>
+  <rect width="1200" height="440" fill="#0a0a0a"/>
+  <rect width="1200" height="440" fill="url(#dots)"/>
+  <rect width="1200" height="440" fill="url(#vignette)"/>
 
-  <text x="600" y="80" text-anchor="middle" class="label">STATIC IMPLANT ANALYSIS</text>
+  <text x="600" y="155" text-anchor="middle"
+        style="font: 800 80px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: -2px"
+        fill="#ffffff">Manual-Map Analysis</text>
 
-  <text x="600" y="170" text-anchor="middle" class="head">Find what pe-sieve</text>
-
-  <text x="600" y="240" text-anchor="middle">
-    <tspan class="head-em">misses</tspan><tspan class="head">.</tspan>
+  <text x="600" y="218" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#fafafa" font-weight="700">Read-only</tspan><tspan fill="#a3a3a3"> reverse engineering of a 2.8 MB manually-mapped cheat DLL </tspan>
+  </text>
+  <text x="600" y="248" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#a3a3a3">that evades </tspan><tspan fill="#fafafa" font-weight="700">pe-sieve</tspan><tspan fill="#a3a3a3"> while the game is live. </tspan><tspan fill="#fafafa" font-weight="700">Anti-cheat safe.</tspan>
+  </text>
+  <text x="600" y="278" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#a3a3a3">Pure Python. No debugger, no injection, no kernel hooks.</tspan>
   </text>
 
-  <text x="600" y="295" text-anchor="middle" class="sub">Reverse engineering a manually-mapped cheat DLL that hides from</text>
-  <text x="600" y="320" text-anchor="middle" class="sub">the strongest public user-mode memory scanner.</text>
+  <g transform="translate(440, 340)">
+    <rect width="160" height="48" rx="24" fill="#dc2626"/>
+    <text x="80" y="31" text-anchor="middle" fill="#ffffff"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Deep-Dive Paper</text>
+  </g>
 
-  <text x="600" y="370" text-anchor="middle" class="meta">WINDOWS &#183; X64 &#183; IDA &#183; HOLLOWS HUNTER &#183; MIT LICENSE</text>
+  <g transform="translate(620, 340)">
+    <rect width="140" height="48" rx="24" fill="none" stroke="#525252" stroke-width="1.5"/>
+    <text x="70" y="31" text-anchor="middle" fill="#e5e5e5"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Walkthrough</text>
+  </g>
 </svg>
