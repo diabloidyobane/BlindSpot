@@ -166,9 +166,14 @@ Three contiguous regions form the active implant:
 
 The Steam overlay path string at `0x1C2D2EB0000` is consistent with module-name impersonation (filling the path so a later `GetModuleFileNameW` on a hijacked thread returns a Steam DLL), but we did not confirm the use site in this study.
 
-## Reconstruction toolkit
+## Related tools
 
-The dumping, header rebuilding, and xref extraction steps are part of a separate target-agnostic toolkit: **[dll-reconstructor](https://github.com/diabloidyobane/dll-reconstructor)**. It works against any process you can `OpenProcess()` on. No driver, no debugger, no symbols required.
+This writeup is two tools deep. Credit and links:
+
+- **[hasherezade/pe-sieve](https://github.com/hasherezade/pe-sieve)** — the public memory scanner whose enumeration blindspot this work documents. The workflow exists *because* pe-sieve is the strongest user-mode scanner available; if a manual-mapped implant slips past it, it slips past basically everything in the user-mode tier. Hasherezade also wrote HollowsHunter which is what recovered the IAT.
+- **[diabloidyobane/PEReconstruct](https://github.com/diabloidyobane/PEReconstruct)** — my target-agnostic DLL reconstruction toolkit. The scripts in `scripts/` here are the Blindspot-specific subset; the full toolkit (broader scanners, the synthetic PE header forge, IAT recovery helpers, hook resolvers) lives there. Works against any process you can `OpenProcess()` on. No driver, no debugger, no symbols required.
+
+If you're hunting your own manual-mapped implants on a different target, run pe-sieve first to confirm the blindspot, then point PEReconstruct at the process.
 
 ## Honest take on the AI angle
 
