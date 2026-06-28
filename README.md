@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/hero.svg" alt="Blindspot: read-only reverse engineering of a manually-mapped cheat DLL that evades pe-sieve. Anti-cheat safe." width="100%"/>
+</p>
+
 # Blindspot
 
 *Reverse engineering a manually-mapped commercial cheat DLL in The Division 2.*

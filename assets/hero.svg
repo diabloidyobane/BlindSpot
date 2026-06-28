@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="Blindspot: anti-cheat-safe static reverse engineering of a manually-mapped cheat DLL.">
+  <defs>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="1.1" fill="#262626"/>
+    </pattern>
+    <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0a0a" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="440" fill="#0a0a0a"/>
+  <rect width="1200" height="440" fill="url(#dots)"/>
+  <rect width="1200" height="440" fill="url(#vignette)"/>
+
+  <text x="600" y="160" text-anchor="middle"
+        style="font: 800 110px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: -3px"
+        fill="#ffffff">Blindspot</text>
+
+  <text x="600" y="218" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#fafafa" font-weight="700">Read-only</tspan><tspan fill="#a3a3a3"> reverse engineering of a 2.8 MB manually-mapped cheat DLL </tspan>
+  </text>
+  <text x="600" y="248" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#a3a3a3">that evades </tspan><tspan fill="#fafafa" font-weight="700">pe-sieve</tspan><tspan fill="#a3a3a3"> while the game is live. </tspan><tspan fill="#fafafa" font-weight="700">Anti-cheat safe.</tspan>
+  </text>
+  <text x="600" y="278" text-anchor="middle"
+        style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <tspan fill="#a3a3a3">Pure Python. No debugger, no injection, no kernel hooks.</tspan>
+  </text>
+
+  <g transform="translate(450, 340)">
+    <rect width="170" height="48" rx="24" fill="#dc2626"/>
+    <text x="85" y="31" text-anchor="middle" fill="#ffffff"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Read the Walkthrough</text>
+  </g>
+
+  <g transform="translate(640, 340)">
+    <rect width="110" height="48" rx="24" fill="none" stroke="#525252" stroke-width="1.5"/>
+    <text x="55" y="31" text-anchor="middle" fill="#e5e5e5"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Scripts</text>
+  </g>
+</svg>
