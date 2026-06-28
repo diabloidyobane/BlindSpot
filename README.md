@@ -2,7 +2,9 @@
   <img src="assets/hero.svg" alt="Find what pe-sieve misses. Reverse engineering a manually-mapped cheat DLL." width="100%"/>
 </p>
 
-# Reverse Engineering a Manually-Mapped Commercial Cheat in The Division 2
+# Blindspot
+
+*Reverse engineering a manually-mapped commercial cheat DLL in The Division 2.*
 
 ![Status](https://img.shields.io/badge/Status-Published-dc2626?style=flat-square&labelColor=0a0a0a)
 ![Focus](https://img.shields.io/badge/Focus-Reverse_Engineering-dc2626?style=flat-square&labelColor=0a0a0a)

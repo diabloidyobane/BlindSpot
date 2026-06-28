@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="Manual-Map Analysis: anti-cheat-safe static reverse engineering of a manually-mapped cheat DLL.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="Blindspot: anti-cheat-safe static reverse engineering of a manually-mapped cheat DLL.">
   <defs>
     <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
       <circle cx="11" cy="11" r="1.1" fill="#262626"/>
@@ -14,9 +14,9 @@
   <rect width="1200" height="440" fill="url(#dots)"/>
   <rect width="1200" height="440" fill="url(#vignette)"/>
 
-  <text x="600" y="155" text-anchor="middle"
-        style="font: 800 80px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: -2px"
-        fill="#ffffff">Manual-Map Analysis</text>
+  <text x="600" y="160" text-anchor="middle"
+        style="font: 800 110px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: -3px"
+        fill="#ffffff">Blindspot</text>
 
   <text x="600" y="218" text-anchor="middle"
         style="font: 400 19px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
