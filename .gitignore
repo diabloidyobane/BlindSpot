@@ -12,14 +12,13 @@ Thumbs.db
 .DS_Store
 desktop.ini
 
-# Things that would only land here by accident — extra safety belt
+# Things that would only land here by accident — extra safety belt.
+# IDA db extensions are NOT excluded — the published implant_reconstructed.*
+# files live under dump/. If you reanalyze your own targets locally,
+# the resulting .id0/.id1/.i64 files are tracked too, so be deliberate
+# about what you commit from any new analysis.
 *KEYAUTH*
 *keyauth*
-*.id0
-*.id1
-*.nam
-*.til
-*.i64
 *_dump_*/
 *_force_*/
 mitm_*

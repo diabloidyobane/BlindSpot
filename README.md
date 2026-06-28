@@ -18,21 +18,30 @@ This level of static analysis applies to any user-mode implant that wipes its he
 
 ## Files
 
-The binary itself is not redistributed (it contains the original implant's identifying strings and remains the copyright of the cheat author). What's shipped is the analysis output and the tooling needed to reproduce it against any target.
-
 | Path | Description |
 |---|---|
 | `implant_paper.md` | Full technical paper: method, findings, discussion |
+| `dump/implant_reconstructed.dll` | Synthetic PE32+ wrapper around the dumped body, loadable in IDA (2.8 MB) |
+| `dump/implant_reconstructed.dll.id0` | IDA database — main store (15 MB) |
+| `dump/implant_reconstructed.dll.id1` | IDA database — secondary store (11 MB) |
+| `dump/implant_reconstructed.dll.nam` | IDA database — named addresses |
+| `dump/implant_reconstructed.dll.til` | IDA database — type info |
 | `dump/implant_xrefs_abs.csv` | 37 absolute 8-byte pointers from the implant into the host image (RVA, VA, file offset) |
 | `dump/implant_xrefs_rel.csv` | rel32 scan results (zero hits, see paper §5) |
 | `dump/implant_imports.txt` | 244-entry IAT recovered via HollowsHunter `/imp 3` |
 | `scripts/scan_exec_private.py` | `VirtualQueryEx` walker that lists every committed RWX private region |
 | `scripts/dump_manualmap.py` | Region dumper, writes `execpriv_<base>_<size>.bin` |
+| `scripts/dump_contiguous_image.py` | Variant dumper, contiguous-region scan |
 | `scripts/rebuild_headerless.py` | Forges synthetic PE32+ header so IDA can open the dump |
-| `scripts/extract_xrefs.py` | Absolute-pointer scan into the host image range |
-| `scripts/enum_thread_starts.py` | Walks all process threads, checks `Win32StartAddress` against the implant range |
+| `scripts/dump_implant_fresh.py` | Live-process auto-dumper (target-agnostic with size filter) |
+| `scripts/dump_loader_region.py` | Stage-1 loader region dumper |
+| `scripts/extend_hh_dump.py` | Extends a HollowsHunter dump to capture region boundaries |
 
-To follow along on your own copy of the implant, run the scripts above against your live `TheDivision2.exe` process. The xref CSVs in `dump/` let you validate that you reached the same hook table.
+The reconstructed DLL has its original headers wiped at runtime, so the version here is what loaded into IDA after the synthetic header rebuild documented in [WALKTHROUGH.md](WALKTHROUGH.md). The IDA database (`.id0/.id1/.nam/.til` sidecars) carries imports, comments, and named functions so you can land directly on the hook table and the ammo-helper site rather than re-doing analysis from scratch.
+
+Open the IDA database with `File > Open... > dump/implant_reconstructed.dll` — IDA will find the sidecars by name automatically. After you save your own changes, IDA may produce an `implant_reconstructed.dll.i64` packed database; that's a normal file to commit too if you push improvements.
+
+The xref CSVs in `dump/` let you validate that you reached the same hook table when running the workflow against your own copy of the implant.
 
 ## How this actually went
 
