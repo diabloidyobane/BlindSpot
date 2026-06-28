@@ -1,0 +1,26 @@
+# Maintenance docs — local only, not for publishing
+PUBLISH_CHECKLIST.md
+
+# Build / IDE
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Things that would only land here by accident — extra safety belt
+*KEYAUTH*
+*keyauth*
+*.id0
+*.id1
+*.nam
+*.til
+*.i64
+*_dump_*/
+*_force_*/
+mitm_*
+*.log
