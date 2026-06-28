@@ -31,15 +31,15 @@
     <tspan fill="#a3a3a3">Pure Python. No debugger, no injection, no kernel hooks.</tspan>
   </text>
 
-  <g transform="translate(440, 340)">
-    <rect width="160" height="48" rx="24" fill="#dc2626"/>
-    <text x="80" y="31" text-anchor="middle" fill="#ffffff"
-          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Deep-Dive Paper</text>
+  <g transform="translate(450, 340)">
+    <rect width="170" height="48" rx="24" fill="#dc2626"/>
+    <text x="85" y="31" text-anchor="middle" fill="#ffffff"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Read the Walkthrough</text>
   </g>
 
-  <g transform="translate(620, 340)">
-    <rect width="140" height="48" rx="24" fill="none" stroke="#525252" stroke-width="1.5"/>
-    <text x="70" y="31" text-anchor="middle" fill="#e5e5e5"
-          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Walkthrough</text>
+  <g transform="translate(640, 340)">
+    <rect width="110" height="48" rx="24" fill="none" stroke="#525252" stroke-width="1.5"/>
+    <text x="55" y="31" text-anchor="middle" fill="#e5e5e5"
+          style="font: 600 15px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0.2px">Scripts</text>
   </g>
 </svg>

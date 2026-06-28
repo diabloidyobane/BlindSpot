@@ -26,7 +26,7 @@ The cheat's brand name is intentionally omitted throughout to keep the work focu
 
 ## Overview
 
-The findings here accompany a technical paper: **[A Workflow Study on a Manually-Mapped Implant in The Division 2](implant_paper.md)**. The paper covers manual-mapping anatomy, pe-sieve's enumeration blind spot, anomaly ranking against 275 executable regions, IAT recovery via HollowsHunter, and the absolute-pointer cross-reference scan that finds 37 hits into the target image.
+The writeup below covers manual-mapping anatomy, pe-sieve's enumeration blind spot, anomaly ranking against 275 executable regions, IAT recovery via HollowsHunter, and the absolute-pointer cross-reference scan that finds 37 hits into the target image. Full play-by-play with time budget in [WALKTHROUGH.md](WALKTHROUGH.md).
 
 This level of static analysis applies to any user-mode implant that wipes its headers and resolves imports manually: commercial cheats, in-game injectors, EDR userland modules, and certain malware loaders.
 
@@ -40,7 +40,6 @@ This level of static analysis applies to any user-mode implant that wipes its he
 
 | Path | Description |
 |---|---|
-| `implant_paper.md` | Full technical paper: method, findings, discussion |
 | `dump/implant_reconstructed.dll` | Synthetic PE32+ wrapper around the dumped body, loadable in IDA (2.8 MB) |
 | `dump/implant_reconstructed.dll.id0` | IDA database — main store (15 MB) |
 | `dump/implant_reconstructed.dll.id1` | IDA database — secondary store (11 MB) |
@@ -79,7 +78,7 @@ The paper is clinical; the real workflow was not. Brief version:
 
 6. **Hunted for unlimited ammo.** Cross-referenced the implant against `TheDivision2.exe`. Got 37 absolute 8-byte pointers from the implant into the host image — the implant's hook table. Followed those RVAs back to the host EXE in IDA, found the call sites it was patching. Two were in the weapon tick path: `WeaponInstance::Tick` (RVA `0x4F6A1C0`) and the ammo decrement helper at RVA `0x4F6B340`. The cheat wasn't writing the ammo field directly — it was hooking the *decrement* to be a no-op. Confirmed by zeroing the decrement instruction myself in a controlled test and seeing the magazine never drain.
 
-The actual technical detail (memory layouts, byte patterns, ratio math) is in [the paper](implant_paper.md). The narrative above is what the workflow felt like in practice. Full play-by-play with time budget and lessons learned: [WALKTHROUGH.md](WALKTHROUGH.md).
+Full play-by-play with time budget and lessons learned: [WALKTHROUGH.md](WALKTHROUGH.md).
 
 ## Method
 

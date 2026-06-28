@@ -1,6 +1,6 @@
 # Walkthrough: end-to-end
 
-Personal account of how the analysis actually went, with the rough edges left in. The [paper](implant_paper.md) is the polished version; this is the working log.
+Personal account of how the analysis actually went, with the rough edges left in.
 
 ## Starting point
 
